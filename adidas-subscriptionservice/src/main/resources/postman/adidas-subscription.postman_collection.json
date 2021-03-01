@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "af0c09e0-5ff8-4cbd-b605-ee2c80798077",
+		"name": "adidas-subscription",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getSubscription",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5467/app/subscription?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5467",
+					"path": [
+						"app",
+						"subscription"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllSubscriptions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5467/app/subscriptions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5467",
+					"path": [
+						"app",
+						"subscriptions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create subscription",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 4,\r\n    \"email\": \"mery@gmail.com\",\r\n    \"firstName\": \"mery\",\r\n    \"gender\": \"female\",\r\n    \"dateOfBirth\": \"2010-07-04T00:00:00.000+00:00\",\r\n    \"flagForConsent\": true,\r\n    \"newsletterId\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5467/app/subscription",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5467",
+					"path": [
+						"app",
+						"subscription"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove subscription",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5467/app/subscription?id=7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5467",
+					"path": [
+						"app",
+						"subscription"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "7"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

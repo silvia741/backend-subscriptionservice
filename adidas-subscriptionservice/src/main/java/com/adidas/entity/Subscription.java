@@ -5,6 +5,8 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -12,12 +14,12 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name="subscription")
-public class SubscriptionEntity {
+public class Subscription {
 
 	@Id
 	@Column(unique = true, nullable = false, length = 60)
-	private String id;
-	@Column(nullable=false, length = 60)
+	private int id;
+	@Column(nullable=false, unique= true, length = 60)
 	private String email;
 	@Column(nullable=true, length = 60)
 	private String firstName;
@@ -29,4 +31,8 @@ public class SubscriptionEntity {
 	private boolean flagForConsent;
 	@Column(nullable=false)
 	private int newsletterId;
+	@ManyToOne
+	@JoinColumn(name="campaignId")
+	private Campaign campaign; 
+
 }

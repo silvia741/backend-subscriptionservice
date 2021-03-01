@@ -29,10 +29,8 @@ public class Subscription {
 	private Date dateOfBirth;
 	@Column(nullable=false)
 	private boolean flagForConsent;
-	@Column(nullable=false)
-	private int newsletterId;
 	@ManyToOne
-	@JoinColumn(name="campaignId")
+	@JoinColumn(name="newsLetterId")
 	private Campaign campaign; 
 
 }

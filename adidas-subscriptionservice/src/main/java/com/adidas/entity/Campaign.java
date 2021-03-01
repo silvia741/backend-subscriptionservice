@@ -17,7 +17,7 @@ public class Campaign {
 
 	@Id
 	@Column(unique = true, nullable = false, length = 60)
-	private int campaignId;
+	private int newsLetterId;
 	@Column(nullable=false)
 	private String name;
 	@Column(nullable=true, length = 60)

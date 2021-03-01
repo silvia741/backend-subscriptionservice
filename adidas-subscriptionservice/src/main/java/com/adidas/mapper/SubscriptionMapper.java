@@ -2,7 +2,9 @@ package com.adidas.mapper;
 
 import org.springframework.stereotype.Component;
 
+import com.adidas.entity.Campaign;
 import com.adidas.entity.Subscription;
+import com.adidas.model.CampaignModel;
 import com.adidas.model.SubscriptionModel;
 
 @Component("subscriptionMapper")
@@ -16,7 +18,14 @@ public class SubscriptionMapper {
 		subscriptionEntity.setFlagForConsent(subscriptionModel.isFlagForConsent());
 		subscriptionEntity.setGender(subscriptionModel.getGender());
 		subscriptionEntity.setId(subscriptionModel.getId());
-		subscriptionEntity.setNewsletterId(subscriptionModel.getNewsletterId());
+		Campaign campaign = new Campaign();
+		CampaignModel campaignModel = subscriptionModel.getCampaignModel();
+		if (campaignModel != null) {
+			campaign.setNewsLetterId(campaignModel.getNewsLetterId());
+			campaign.setName(campaignModel.getName());
+			campaign.setDescription(campaignModel.getDescription());
+		}
+		subscriptionEntity.setCampaign(campaign);
 		return subscriptionEntity;
 	}
 	
@@ -28,7 +37,14 @@ public class SubscriptionMapper {
 		subscriptionModel.setFlagForConsent(subscriptionEntity.isFlagForConsent());
 		subscriptionModel.setGender(subscriptionEntity.getGender());
 		subscriptionModel.setId(subscriptionEntity.getId());
-		subscriptionModel.setNewsletterId(subscriptionEntity.getNewsletterId());
+		Campaign campaign = subscriptionEntity.getCampaign();
+		CampaignModel campaignModel = new CampaignModel();
+		if (campaign != null) {
+			campaignModel.setDescription(campaign.getDescription());
+			campaignModel.setNewsLetterId(campaign.getNewsLetterId());
+			campaignModel.setName(campaign.getName());
+		}
+		subscriptionModel.setCampaignModel(campaignModel);
 		return subscriptionModel;
 	}
 	

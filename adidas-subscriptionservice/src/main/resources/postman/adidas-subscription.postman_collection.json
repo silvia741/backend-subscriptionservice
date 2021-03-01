@@ -21,7 +21,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:5467/app/subscription?id=1",
+					"raw": "http://localhost:5467/app/subscription?id=2",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -34,7 +34,7 @@
 					"query": [
 						{
 							"key": "id",
-							"value": "1"
+							"value": "2"
 						}
 					]
 				}
@@ -68,7 +68,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\": 4,\r\n    \"email\": \"mery@gmail.com\",\r\n    \"firstName\": \"mery\",\r\n    \"gender\": \"female\",\r\n    \"dateOfBirth\": \"2010-07-04T00:00:00.000+00:00\",\r\n    \"flagForConsent\": true,\r\n    \"newsletterId\": 2\r\n}",
+					"raw": "{\r\n    \"id\": 4,\r\n    \"email\": \"mery@gmail.com\",\r\n    \"firstName\": \"mery\",\r\n    \"gender\": \"female\",\r\n    \"dateOfBirth\": \"2010-07-04T00:00:00.000+00:00\",\r\n    \"flagForConsent\": true,\r\n    \"campaignModel\": {\r\n        \"newsLetterId\": 2,\r\n        \"name\": \"test3\",\r\n        \"description\": \"test3\"\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

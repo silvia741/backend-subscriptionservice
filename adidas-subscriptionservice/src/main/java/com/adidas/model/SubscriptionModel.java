@@ -13,5 +13,5 @@ public class SubscriptionModel {
 	private String gender;
 	private Date dateOfBirth;
 	private boolean flagForConsent;
-	private int newsletterId;
+	private CampaignModel campaignModel;
 }

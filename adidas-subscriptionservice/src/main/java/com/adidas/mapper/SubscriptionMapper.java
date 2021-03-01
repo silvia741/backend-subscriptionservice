@@ -9,8 +9,10 @@ import com.adidas.model.SubscriptionModel;
 
 @Component("subscriptionMapper")
 public class SubscriptionMapper {
+	
+	private SubscriptionMapper() {}
 
-	public Subscription convertModelToEntity(SubscriptionModel subscriptionModel) {
+	public static Subscription convertModelToEntity(SubscriptionModel subscriptionModel) {
 		Subscription subscriptionEntity = new Subscription();
 		subscriptionEntity.setDateOfBirth(subscriptionModel.getDateOfBirth());
 		subscriptionEntity.setEmail(subscriptionModel.getEmail());
@@ -29,7 +31,7 @@ public class SubscriptionMapper {
 		return subscriptionEntity;
 	}
 	
-	public SubscriptionModel convertEntityToModel(Subscription subscriptionEntity) {
+	public static SubscriptionModel convertEntityToModel(Subscription subscriptionEntity) {
 		SubscriptionModel subscriptionModel = new SubscriptionModel();
 		subscriptionModel.setDateOfBirth(subscriptionEntity.getDateOfBirth());
 		subscriptionModel.setEmail(subscriptionEntity.getEmail());

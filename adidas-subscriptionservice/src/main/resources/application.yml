@@ -14,12 +14,11 @@ spring:
             dialect: org.hibernate.dialect.MySQL8Dialect
       open-in-view: false
 server:
-   port: 0
+   port: 5467
 eureka:
   client:
     serviceUrl:
       defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
-  instance:
-    preferIpAddress: true
-    
+jwt:
+   secret: testsecret   
     

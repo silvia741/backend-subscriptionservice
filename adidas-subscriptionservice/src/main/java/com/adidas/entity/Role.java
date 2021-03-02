@@ -8,22 +8,22 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 import lombok.Data;
 
-@Entity
 @Data
-@Table(name="campaign")
-public class Campaign {
+@Entity
+@Table(name="roles", uniqueConstraints = @UniqueConstraint(
+		columnNames = {"name", "id"}))
+public class Role {
 
 	@Id
 	@GeneratedValue
-	@Column(unique = true, nullable = false, length = 60)
-	private int newsLetterId;
-	@Column(nullable=false)
+	@Column(name="id", unique = true, nullable = false)
+	private Integer roleId;
+	
+	@Column(name="name", nullable = false, length=45)
 	private String name;
-	@Column(nullable=true, length = 60)
-	private String description;
-	@OneToMany(mappedBy="campaign")
-	private Set<Subscription> subscriptions;
+
 }

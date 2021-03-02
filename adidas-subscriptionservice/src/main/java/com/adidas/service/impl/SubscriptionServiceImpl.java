@@ -30,15 +30,15 @@ public class SubscriptionServiceImpl implements SubscriptionService {
 		SubscriptionModel subscriptionModel = null;
 		Subscription subscriptionEntity = subscriptionRepository.findById(id);
 		if (subscriptionEntity != null) {
-			subscriptionModel = subscriptionMapper.convertEntityToModel(subscriptionEntity);
+			subscriptionModel = SubscriptionMapper.convertEntityToModel(subscriptionEntity);
 		}
 		return subscriptionModel;
 	}
 
 	@Override
 	public SubscriptionModel addSubscription(SubscriptionModel subscriptionModel) throws Exception {
-		Subscription subscription = subscriptionRepository.save(subscriptionMapper.convertModelToEntity(subscriptionModel));
-		return subscriptionMapper.convertEntityToModel(subscription);
+		Subscription subscription = subscriptionRepository.save(SubscriptionMapper.convertModelToEntity(subscriptionModel));
+		return SubscriptionMapper.convertEntityToModel(subscription);
 	}
 
 	@Override
@@ -46,7 +46,7 @@ public class SubscriptionServiceImpl implements SubscriptionService {
 		List<Subscription> subscriptionList = subscriptionRepository.findAll();
 		List<SubscriptionModel> subscriptionModelList = new ArrayList<>();
 		for (Subscription subscription : subscriptionList) {
-			subscriptionModelList.add(subscriptionMapper.convertEntityToModel(subscription));
+			subscriptionModelList.add(SubscriptionMapper.convertEntityToModel(subscription));
 		}
 		return subscriptionModelList;
 	}

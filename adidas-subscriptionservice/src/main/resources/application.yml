@@ -1,0 +1,24 @@
+spring:
+   application:
+      name: subscription-service
+   datasource:
+      url: jdbc:mysql://localhost:3306/adidas?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+      username: root
+      password: Admin1234*
+   jpa:
+      show-sql: true
+      hibernate:
+         ddl-auto: update
+      properties:
+         hibernate:
+            dialect: org.hibernate.dialect.MySQL8Dialect
+      open-in-view: false
+server:
+   port: 5467
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+jwt:
+   secret: testsecret   
+    

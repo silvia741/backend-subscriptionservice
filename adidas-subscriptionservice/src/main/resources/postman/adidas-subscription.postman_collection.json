@@ -1,0 +1,216 @@
+{
+	"info": {
+		"_postman_id": "af0c09e0-5ff8-4cbd-b605-ee2c80798077",
+		"name": "adidas-subscription",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getSubscription",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaWx2aWEiLCJleHAiOjE2MTQ3MjYwMDB9.ocMDn7H4E0zld-42WsxFjp1M0xx4OxOJLV6gm3cin7WOxJxhp6rUoUPUKCrwmMDoB6SseiCsu57UWuEbAchWZA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5467/app/subscription?id=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5467",
+					"path": [
+						"app",
+						"subscription"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllSubscriptions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaWx2aWEiLCJleHAiOjE2MTQ3MjYwMDB9.ocMDn7H4E0zld-42WsxFjp1M0xx4OxOJLV6gm3cin7WOxJxhp6rUoUPUKCrwmMDoB6SseiCsu57UWuEbAchWZA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5467/app/subscriptions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5467",
+					"path": [
+						"app",
+						"subscriptions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create subscription",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaWx2aWEiLCJleHAiOjE2MTQ3MjYwMDB9.ocMDn7H4E0zld-42WsxFjp1M0xx4OxOJLV6gm3cin7WOxJxhp6rUoUPUKCrwmMDoB6SseiCsu57UWuEbAchWZA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 4,\r\n    \"email\": \"mery@gmail.com\",\r\n    \"firstName\": \"mery\",\r\n    \"gender\": \"female\",\r\n    \"dateOfBirth\": \"2010-07-04T00:00:00.000+00:00\",\r\n    \"flagForConsent\": true,\r\n    \"campaignModel\": {\r\n        \"newsLetterId\": 2,\r\n        \"name\": \"test3\",\r\n        \"description\": \"test3\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5467/app/subscription",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5467",
+					"path": [
+						"app",
+						"subscription"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove subscription",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaWx2aWEiLCJleHAiOjE2MTQ3MjYwMDB9.ocMDn7H4E0zld-42WsxFjp1M0xx4OxOJLV6gm3cin7WOxJxhp6rUoUPUKCrwmMDoB6SseiCsu57UWuEbAchWZA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5467/app/subscription?id=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5467",
+					"path": [
+						"app",
+						"subscription"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\":\"Mery\",\r\n    \"password\":\"Mery\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5467/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5467",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\":\"silvia\",\r\n    \"password\":\"silvia\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5467/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5467",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

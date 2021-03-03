@@ -2,10 +2,9 @@ spring:
    application:
       name: email-service
 server:
-   port: 0
+   port: 4567
 eureka:
   client:
     serviceUrl:
       defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
-  instance:
-    preferIpAddress: true
+    fetch-registry: true

@@ -26,7 +26,7 @@ The token has a fairly high lifetime, in a real situation it would not be like t
 
 All microservices have in 'src/main/resources' his own postman collection of each rest call with parameters, headers, etc.
 
-In adidas-subscriptionservice I have used MySql as database. It is created automatically when the application starts. The only thing to do to make everything work is (after db is created) to insert a 'campaign' (insert into campaign (id, name, desc) values (1, 'campaign1', 'campaign1') in table 'Campaing' in order to be able to create subscriptions. Because each subscription belongs to one campaign.
+In adidas-subscriptionservice I have used MySql as database. It is created automatically when the application starts. The only thing to do to make everything work is (after db is created) to insert a 'campaign' (insert into campaign (news_letter_id, description, name) values (1, 'campaign1', 'campaign1') in table 'Campaing' in order to be able to create subscriptions. Because each subscription belongs to one campaign.
 
 adidas-emailservice only have one method to show the html email that would be sent if there was an email delivery system implemented. This microservice is not securized but in a real situation it should be.
 

@@ -2,10 +2,9 @@ spring:
    application:
       name: public-service
 server:
-   port: 0
+   port: 8234
 eureka:
   client:
-    serviceUrl:
-      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
-  instance:
-    preferIpAddress: true
+     serviceUrl:
+        defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+     fetch-registry: true

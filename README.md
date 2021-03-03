@@ -22,7 +22,7 @@ adidas-subscriptionservice is a jwt securized spring boot app. The following ope
 
 Only login and register do not need user authentication. The rest need a token authentication in header request. If you are not authenticated you will receive a forbidden status from server.
 
-The token has a fairly high lifetime, in a real situation it would not be like that.
+The token has a fairly high lifetime, in a real situation it would not be like that. Also users are created with admin role, it would not be like that too in the real life.
 
 All microservices have in 'src/main/resources' his own postman collection of each rest call with parameters, headers, etc.
 

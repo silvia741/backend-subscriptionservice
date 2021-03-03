@@ -42,6 +42,11 @@ public class PublicController {
 		this.publicRestClient = publicRestClient;
 	}
 	
+	/**
+	 * Do login and get token
+	 * @param request
+	 * @return
+	 */
 	@PostMapping("/login")
 	public ResponseEntity<AuthResponse> login(@RequestBody AuthRequest request) { 
 		logger.info("Starting rest service PublicController.login");
@@ -60,6 +65,11 @@ public class PublicController {
 		return response;
 	}
 	
+	/**
+	 * Create new user
+	 * @param registrationRequest
+	 * @return
+	 */
 	@PostMapping("/register")
 	public ResponseEntity<Void> registerUser(@RequestBody @Valid RegistrationRequest registrationRequest) {
 		logger.info("Starting rest service PublicController.registerUser");
@@ -78,6 +88,11 @@ public class PublicController {
 		return response;
 	}
 	
+	/**
+	 * Get all subscriptions
+	 * @param bearerToken
+	 * @return
+	 */
 	@GetMapping("/subscriptions")
 	@Headers("Content-Type: application/json")
 	public ResponseEntity<List<SubscriptionModel>> getAllSubscriptions(@RequestHeader(Constants.AUTH_TOKEN) String bearerToken){
@@ -97,6 +112,12 @@ public class PublicController {
 		return response;
 	}
 	
+	/**
+	 * Get the subscription by the id passed by parameter
+	 * @param bearerToken
+	 * @param id
+	 * @return
+	 */
 	@GetMapping("/subscription")
 	@Headers("Content-Type: application/json")
 	public ResponseEntity<SubscriptionModel> getSubscription(@RequestHeader(Constants.AUTH_TOKEN) String bearerToken, @RequestParam(name="id", required=true) int id) {
@@ -116,6 +137,12 @@ public class PublicController {
 		return response;
 	}
 	
+	/**
+	 * Create new subscription
+	 * @param bearerToken
+	 * @param subscriptionModel
+	 * @return
+	 */
 	@PostMapping("/subscription")
 	@Headers("Content-Type: application/json")
 	public ResponseEntity<Integer> addSubscription(@RequestHeader(Constants.AUTH_TOKEN) String bearerToken, @RequestBody SubscriptionModel subscriptionModel) {
@@ -135,6 +162,12 @@ public class PublicController {
 		return response;
 	}
 
+	/**
+	 * Remove subscription
+	 * @param bearerToken
+	 * @param id
+	 * @return
+	 */
 	@DeleteMapping("/subscription")
 	@Headers("Content-Type: application/json")
 	public ResponseEntity<Void> removeSubscription(@RequestHeader(Constants.AUTH_TOKEN) String bearerToken, @RequestParam(name="id", required=true) int id) {

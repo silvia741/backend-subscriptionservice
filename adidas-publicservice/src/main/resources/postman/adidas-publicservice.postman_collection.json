@@ -1,0 +1,218 @@
+{
+	"info": {
+		"_postman_id": "f4d16db9-33a5-4e37-bb81-09f40b6b0e8b",
+		"name": "adidas-publicservice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getSubscription",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaWx2aWEiLCJleHAiOjE2MTQ4MTI0MDB9.y_Hvtf3TUWlofiO70etSx0oEvoseBs7cdYlLBF-E2gIDGcD8QF7XagXsDRvKffcISRARj-494Odvb3hQ_aI0Aw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8234/v2/subscription?id=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8234",
+					"path": [
+						"v2",
+						"subscription"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllSubscriptions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaWx2aWEiLCJleHAiOjE2MTQ4MTI0MDB9.y_Hvtf3TUWlofiO70etSx0oEvoseBs7cdYlLBF-E2gIDGcD8QF7XagXsDRvKffcISRARj-494Odvb3hQ_aI0Aw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8234/v2/subscriptions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8234",
+					"path": [
+						"v2",
+						"subscriptions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\":\"silvia\",\r\n    \"password\":\"silvia\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8234/v2/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8234",
+					"path": [
+						"v2",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\":\"Mery\",\r\n    \"password\":\"Mery\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8234/v2/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8234",
+					"path": [
+						"v2",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create subscription",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaWx2aWEiLCJleHAiOjE2MTQ4MTI0MDB9.y_Hvtf3TUWlofiO70etSx0oEvoseBs7cdYlLBF-E2gIDGcD8QF7XagXsDRvKffcISRARj-494Odvb3hQ_aI0Aw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 5,\r\n    \"email\": \"lu@gmail.com\",\r\n    \"firstName\": \"lourdes\",\r\n    \"gender\": \"female\",\r\n    \"dateOfBirth\": \"2010-07-04T00:00:00.000+00:00\",\r\n    \"flagForConsent\": true,\r\n    \"campaignModel\": {\r\n        \"newsLetterId\": 2,\r\n        \"name\": \"test4\",\r\n        \"description\": \"test4\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8234/v2/subscription",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8234",
+					"path": [
+						"v2",
+						"subscription"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove subscription",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaWx2aWEiLCJleHAiOjE2MTQ4MTI0MDB9.y_Hvtf3TUWlofiO70etSx0oEvoseBs7cdYlLBF-E2gIDGcD8QF7XagXsDRvKffcISRARj-494Odvb3hQ_aI0Aw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8234/v2/subscription?id=40",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8234",
+					"path": [
+						"v2",
+						"subscription"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "40"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

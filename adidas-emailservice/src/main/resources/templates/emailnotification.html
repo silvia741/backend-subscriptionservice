@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+<meta charset="utf-8" />
+
+<title>Email</title>
+
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<!-- Custom styles for this template -->
+<link href="#" th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+
+<body>
+	<h1>
+		Thanks for signing up <span th:text="${username}"></span>
+	</h1>
+	<div class="container">
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div id="confirm_msg">
+					<p>Now you’re part of the team, we’ll keep you in the know with
+						our latest and greatest. Look out for the special welcome gift
+						we’ve just sent you and add us to your address book or safe sender
+						list so you don’t miss a thing.</p>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</div>
+</body>
+
+</body>
+</html>
